@@ -1,0 +1,217 @@
+:root {
+    --bg-color: #F5E9DC;
+    --primary-color: #A87A5E;
+    --secondary-color: #8C5E46;
+    --accent-color: #D9B89D;
+    --text-color: #3a2d21;
+    --font-family: 'Vazirmatn', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: #7f5539;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.page.active {
+    display: flex;
+}
+
+#welcome-page {
+    background-color: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.welcome-content {
+    text-align: center;
+}
+
+#view-menu-btn {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-family: var(--font-family);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#view-menu-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+}
+
+#menu-page {
+    justify-content: flex-start;
+}
+
+header {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 10;
+ 
+}
+
+#menu-container {
+    
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+}
+
+.header-txt {
+    color: #ffffff;
+}
+
+.category-header {
+    background-color: #b08968;
+    font-family: iranNastaliq;
+    font-size: 48px;
+    display: flex;
+    flex-direction: row-reverse; /* برعکس کنه: متن اول، آیکون بعدش */
+    align-items: center;          /* وسط‌چین عمودی */
+    justify-content: center;      /* وسط‌چین افقی کل مجموعه */
+    gap: 15px;                    /* فاصله بین آیکون و متن */
+    border-radius: 15px 15px 0 0 ; /* four values */  
+  }
+  
+  .category-icon {
+    width: 38px;  /* 👈 اندازه دلخواه */
+    height: 38px;
+    object-fit: contain; /* حفظ تناسب تصویر */
+  }
+  
+
+.menu-item {
+
+    display: flex;
+    align-items: center;
+    background-color: #ede0d4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.menu-item-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 1rem;
+}
+
+.menu-item-details {
+    flex-grow: 1;
+}
+
+.menu-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.menu-item-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.menu-item-price {
+
+    display: flex;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.menu-item-ingredients {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* 1. Make category-nav stick to the very top */
+#category-nav {
+    position: sticky;
+    top: 0; /* ← critical: stick to top of viewport */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    overflow-x: auto;
+    /* Remove fixed padding; use flex gap instead for cleaner spacing */
+    padding: 0.75rem 0;
+    gap: 0.5rem; /* space between items */
+    z-index: 10;
+    /* Prevent scrollbars from cutting off content */
+    scrollbar-width: thin;
+}
+
+/* 2. Make nav items bigger & spaced */
+#category-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* ↑ center vertically */
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.1rem; /* bigger text */
+    font-weight: 600;
+    border-bottom: 3px solid transparent; /* thicker underline */
+    transition: all 0.3s ease;
+    /* Prevent shrinking in flex container */
+    flex-shrink: 0;
+    /* Generous padding */
+    padding: 0.8rem 1.2rem;
+    min-width: 100px; /* avoids too-narrow items */
+    text-align: center;
+}
+
+#category-nav a img {
+    width: 40px;    /* ↑ bigger icons */
+    height: 40px;
+    margin-bottom: 0.4rem; /* more space between icon & text */
+    object-fit: contain;
+}
+
+#category-nav a.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background-color: rgba(168, 122, 94, 0.08); /* subtle bg on active */
+    border-radius: 6px 6px 0 0;
+}
+
+/* 3. Critical: prevent sections from being hidden behind sticky nav */
+.category {
+    scroll-margin-top: 80px; /* ≈ height of nav (adjust if needed) */
+    /* Ensure each category starts below the nav */
+    margin-top: 0;
+    /* Optional: add small top padding for visual comfort */
+    padding-top: .2rem;
+    border-radius:15px 15px 0 0 ;
+}
+
+/* Optional: improve scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
