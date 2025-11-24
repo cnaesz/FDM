@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="menu-item-details">
                     <div class="menu-item-header">
                         <span class="menu-item-name">${item.name}</span>
-                        <span class="menu-item-price">${item.price}</span>
                     </div>
                     <p class="menu-item-ingredients">${item.description}</p>
+                    <div class="menu-item-price">${item.price}</div>
                 </div>
             `;
             categoryEl.appendChild(itemEl);
@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupSpyscroller() {
         const navLinks = document.querySelectorAll('#category-nav a');
         const categories = document.querySelectorAll('.category');
+        const nav = document.getElementById('category-nav');
 
         // Smooth scroll on click
         navLinks.forEach(link => {
@@ -122,6 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
+                setTimeout(()=>{
+                    link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+                }, 300);
             });
         });
 
@@ -139,6 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 link.classList.remove('active');
                 if (link.getAttribute('href').includes(current)) {
                     link.classList.add('active');
+                    link.scrollIntoView({
+                        behavior: 'auto',
+                        inline: 'center',
+                        block: 'nearest'
+                    })
                 }
             });
         });

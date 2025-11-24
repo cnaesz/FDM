@@ -1,0 +1,14 @@
+{
+    "name": "digital-menu",
+    "version": "1.0.0",
+    "description": "Responsive digital menu for traditional Iranian cafe",
+    "scripts": {
+      "start": "npx serve -s ."
+    },
+    "engines": {
+      "node": "20.x"
+    },
+    "dependencies": {
+      "serve": "^14.2.3"
+    }
+  }

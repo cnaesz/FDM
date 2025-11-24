@@ -4,7 +4,7 @@
     --secondary-color: #8C5E46;
     --accent-color: #D9B89D;
     --text-color: #3a2d21;
-    --font-family: 'Vazirmatn', sans-serif;
+    --font-family: 'Vazirmatn', sans-serif, Lalezar;
 }
 
 body {
@@ -31,9 +31,12 @@ body {
 #welcome-page {
     background-color: var(--primary-color);
     color: var(--bg-color);
+
 }
 
 .welcome-content {
+    font-size: 18px;
+    font-family: EL messiri;
     text-align: center;
 }
 
@@ -86,7 +89,7 @@ header {
 .category-header {
     background-color: #b08968;
     font-family: iranNastaliq;
-    font-size: 48px;
+    font-size: 30px;
     display: flex;
     flex-direction: row-reverse; /* برعکس کنه: متن اول، آیکون بعدش */
     align-items: center;          /* وسط‌چین عمودی */
@@ -123,6 +126,8 @@ header {
 
 .menu-item-details {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu-item-header {
@@ -132,13 +137,14 @@ header {
 }
 
 .menu-item-name {
+    font-family: Almarai;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: .8rem;
 }
 
 .menu-item-price {
-
-    display: flex;
+    margin-top: auto;   /* می‌فرستد به پایین */
+    align-self: flex-end; /* چسباندن به چپ */
     color: var(--secondary-color);
     font-weight: 700;
 }
